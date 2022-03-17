@@ -1,0 +1,204 @@
+body
+
+    & *
+    letter-spacing: var(--nextui-letterSpacings-normal)
+
+    #__next
+        min-height: 100vh
+        display: flex
+        flex-flow: column
+
+        .content
+            flex: 1
+            position: relative
+
+a
+    color: var(--nextui-colors-primary)
+
+section
+    margin: 50px 0
+
+    &.title
+        position: relative
+        color: #2D4C3A
+        padding: 30px 0
+
+        .small-circle
+            position: absolute
+            bottom: -30px
+            right: 130px
+            width: 125px
+            height: 125px
+            border-radius: 50%
+            border: 3px solid var(--nextui-colors-primary)
+            animation: 10s ease 0s infinite normal none running bonc
+            z-index: 2
+
+        .big-circle
+            position: absolute
+            bottom: 0px
+            right: 0
+            width: 175px
+            height: 175px
+            border-radius: 50%
+            background: #f8f9fe
+            animation: 16s ease 0s infinite normal none running bonc
+            z-index: 1
+
+    &.blue-section
+        margin: 0
+        padding: 50px 0
+        background: #EFF7F7
+
+.content
+
+    p
+        line-height: var(--nextui-lineHeights-md)
+
+    .nextui-button
+        margin-left: 15px
+        margin-right: 15px
+        height: auto
+        font-size: 16px
+        line-height: 50px
+
+    .custom-tooltip
+        background: #5faf9c
+        color: #fff
+        width: 17px
+        height: 17px
+        border-radius: 50%
+        line-height: 17px
+        display: inline-block
+        text-align: center
+        font-size: 12px
+        margin: 0 5px
+        font-weight: bold
+        cursor: pointer
+
+    .price-radios-center
+        label
+            align-items: center
+            font-weight: bold
+            span
+                font-size: 15px
+
+    .price-radios
+        max-width: 450px
+        margin: 0 auto
+        label
+            font-weight: bold
+            span
+                font-size: 15px
+                line-height: 26px
+                display: inline-block
+                .nextui-radio-point
+                    margin-right: 10px
+                    position: relative
+                    top: 1.5px
+                &.price
+                    font-weight: bold
+                    color: var(--nextui-colors-seafoamGreen)
+
+    .form-pager
+        position: absolute
+        bottom: 20px
+        left: 50%
+        transform: translate(-50%, 0)
+
+    .custom-card
+        max-width: 280px
+        box-shadow: 0 5px 20px -5px rgba(20, 20, 20, 0.1)
+        position: absolute
+        bottom: 0px
+        left: 115px
+        animation: 12s ease 0s infinite normal none running bonc
+        z-index: 1
+
+    .card-header
+        display: flex
+
+        &_name
+            padding: 0 0 0 10px
+            flex: 1
+            line-height: 13px
+            display: flex
+            flex-flow: column
+            justify-content: center
+
+    .typing-text
+        font-size: 14px
+        opacity: 0.6
+        animation: typing 1.8s steps(40, end)
+        overflow: hidden
+        white-space: nowrap
+
+main    
+    ul
+        color: var(--nextui-colors-text)
+        list-style-type: disc
+        margin-left: 40px
+        li
+            font-size: 14px
+            line-height: 21px
+            padding-left: 5px
+            &::marker
+                color: var(--nextui-colors-primary)
+                font-weight: bold
+
+.nextui-modal
+    ol
+        color: var(--nextui-colors-text)
+        li
+            font-size: 14px
+            line-height: 21px
+            padding-left: 5px
+            &::marker
+                color: var(--nextui-colors-primary)
+                font-weight: bold
+
+.loading-modal
+    background: no-repeat
+    box-shadow: 0 0 0
+    &_circle
+        --nextui--loadingColor: #fff
+
+.nextui-tooltip-content
+    border: 2px solid #5faf9c
+    background: #f7fbfa
+    text-align: center
+    text-align: center
+    max-width: 500px
+    padding: 20px 30px 25px
+
+    h6
+        color: #5faf9c
+        font-size: 20px
+    
+    p
+        font-size: 15px
+        margin: 0
+
+    .nextui-tooltip-arrow
+        bottom: -21px
+        border-bottom: 2px solid #5faf9c
+        border-right: 2px solid #5faf9c
+        background: #f7fbfa
+
+@keyframes bonc
+    from
+        transform: translateY(0)
+    30%
+        transform: translateY(-10px)
+    50%
+        transform: translateY(4px)
+    70%
+        transform: translateY(-15px)
+    to
+        transform: translateY(0)
+
+@keyframes typing
+    from
+        width: 0
+    to
+        width: 100%
