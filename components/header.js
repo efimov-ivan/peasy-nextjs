@@ -7,6 +7,7 @@ const Header = props => {
     <header>
       <Container sm display="flex" justify="space-between">
         <Image src='./images/Peasy_Logo.svg' width={150} height={50} className="logo"/>
+        {/* <Image src='./images/Peasy_Logo_footer.svg' width={150} height={50} className="logo"/> */}
         <ul className="nav">
           <li><Link href={'/why-us'}>Why Us</Link></li>
           <li><Link href={'/process'}>Process</Link></li>
@@ -21,9 +22,9 @@ const Header = props => {
           padding: 15px 0;
           position: sticky;
           top: 0;
-          background: hsla(0,0%,100%,0.8);
+          background: hsla(0, 0%, 100%, 0.6);
           backdrop-filter: saturate(180%) blur(10px);
-          z-index: 10;
+          z-index: 11;
         }
         header .logo{
           margin: 0;
@@ -38,6 +39,7 @@ const Header = props => {
         }
         header .nav li a{
           color: var(--nextui-colors-primaryDark);
+          //color: #fff;
           font-weight: 500;
         }
       `}</style>
