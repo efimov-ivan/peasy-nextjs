@@ -28,8 +28,6 @@ export default function Bubbles(){
             scale={getRandom(0.01, 0.05)}
             position={[getRandom(-6, 8) * mousePosition, getRandom(-3, 3), 0]}
             ref={(el) => (bubblesRef.current[i] = el)}
-            onPointerEnter={() => increaseScale(bubblesRef.current[i])}
-            onPointerLeave={() => decreaseScale(bubblesRef.current[i])}
           >
             <sphereGeometry args={[1, 32, 32]} />
             <meshStandardMaterial color={getRandomFromArray(bubblesColors)} />
