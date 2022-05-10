@@ -5,11 +5,10 @@ import { useState, useRef } from "react";
 export default function Bubbles(){
 
     const [mousePosition, setMousePosition] = useState(1)
-    const bubblesColors = ['#7bdcb5', '#00d084', '#BDD81E'];
+    const bubblesColors = ['#7bdcb5', '#00d084', '#BDD81E', '#3BB29B'];
     const bubblesRef = useRef([]);
 
     useFrame((state) => {
-
         for (let i = 0; i < bubblesRef.current.length; i++) {
             let mesh = bubblesRef.current[i];
             mesh.position.y += (i*0.00001);
@@ -23,17 +22,20 @@ export default function Bubbles(){
       <>
         <ambientLight intensity={0.8} />
 
-        {[...Array(200)].map((x, i) => (
+        {[...Array(250)].map((x, i) => (
           <mesh
             key={i}
-            scale={getRandom(0.01, 0.02)}
+            scale={getRandom(0.01, 0.05)}
             position={[getRandom(-6, 8) * mousePosition, getRandom(-3, 3), 0]}
             ref={(el) => (bubblesRef.current[i] = el)}
+            onPointerEnter={() => increaseScale(bubblesRef.current[i])}
+            onPointerLeave={() => decreaseScale(bubblesRef.current[i])}
           >
             <sphereGeometry args={[1, 32, 32]} />
             <meshStandardMaterial color={getRandomFromArray(bubblesColors)} />
           </mesh>
         ))}
+
         <CameraShake
           maxYaw={0.05} // Max amount camera can yaw in either direction
           maxPitch={0.05} // Max amount camera can pitch in either direction
@@ -48,6 +50,16 @@ export default function Bubbles(){
         {/* <gridHelper /> */}
       </>
     );
+}
+
+function increaseScale(mesh){
+    const {x,y,z} = mesh.scale;
+    mesh.scale.set(x*3, y*3, z*3);
+}
+
+function decreaseScale(mesh){
+    const {x,y,z} = mesh.scale;
+    mesh.scale.set(x/3, y/3, z/3);
 }
 
 function getRandom(min, max) {
